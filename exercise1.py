@@ -44,6 +44,17 @@ def test_3d_vector_addition() -> None:
     assert isclose(v[2], 6.3)
 
 
+import numpy as np
+from numpy import random as np_rand
+
 def test_3d_vector_subtraction() -> None:
     # Task B: add a test for vector subtraction
-    assert False
+    v = Vector([1.1, 2.2, 3.3]) - Vector([1.0,2.0,3.3])
+    assert isclose(v[0], 0.1)
+    assert isclose(v[0], 0.2)
+    assert isclose(v[0], 0.3)
+
+    valVec1 = np_rand.uniform(size = 3)
+    valVec2 = np_rand.uniform(size = 3)
+
+    assert(np.allclose(Vector(valVec1) - Vector(valVec2), valVec1 - valVec2))
